@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User {
+struct User: Codable {
     var userID: Int
     var id: Int
     var title: String
@@ -21,3 +21,24 @@ struct User {
         self.completed = dictionary["completed"] as? Bool ?? false
     }
 }
+
+//struct Students : Codable {
+//    struct Branch : Codable {
+//        let subject: Int
+//        let totalStudents: Int
+//        let totalBooks: Int
+//        private enum CodingKeys : String, CodingKey {
+//            case subject
+//            case totalStudents = "total_students"
+//            case totalBooks = "total_books"
+//        }
+//    }
+//    struct Subject : Codable {
+//        let subject_id: Int
+//        let name: String
+//        let pratical: Bool
+//        let pratical_days: [String]
+//    }
+//    let branch: Branch
+//    let subject: [Subject]
+//}
