@@ -38,11 +38,17 @@ class ViewController: UIViewController {
 //                guard let title = jsonArray[0]["title"] as? String else { return }
 //                print("Title: \(title)")
                 
-                // Display all title
-                for dic in jsonArray {
-                    guard let title = dic["title"] as? String else { return }
-                    print("Title: \(title)")
-                }
+                var model = [User]()
+                
+                model = jsonArray.compactMap{User($0)}
+                print("USERID: \(model[0].userID)")
+                
+//                // Display all title
+//                for dic in jsonArray {
+//                    guard let title = dic["title"] as? String else { return }
+//                    print("Title: \(title)")
+//                }
+                
                 
                 
             } catch let parsingError {
